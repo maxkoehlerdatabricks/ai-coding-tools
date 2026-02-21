@@ -1,8 +1,18 @@
 import os
+from pathlib import Path
+
 from databricks.connect import DatabricksSession
 
-# Uses ~/.databrickscfg [DEFAULT] for host/token. Cluster ID must be set, e.g.:
-#   source .databricks/.databricks.env   # (from project root, sets DATABRICKS_CLUSTER_ID)
+# Load .databricks/.databricks.env so cluster ID (and other vars) are set when using Run button
+_env_file = Path(__file__).resolve().parent / ".databricks" / ".databricks.env"
+if _env_file.exists():
+    with open(_env_file) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, _, value = line.partition("=")
+                os.environ.setdefault(key.strip(), value.strip())
+
 builder = DatabricksSession.builder
 if os.environ.get("DATABRICKS_CLUSTER_ID"):
     builder = builder.clusterId(os.environ["DATABRICKS_CLUSTER_ID"])
