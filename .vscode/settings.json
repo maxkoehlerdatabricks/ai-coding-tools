@@ -1,8 +1,8 @@
 {
+  "databricks.logs.enabled": true,
   "jupyter.interactiveWindow.cellMarker.codeRegex": "^# COMMAND ----------|^# Databricks notebook source|^(#\\s*%%|#\\s*\\<codecell\\>|#\\s*In\\[\\d*?\\]|#\\s*In\\[ \\])",
   "jupyter.interactiveWindow.cellMarker.default": "# COMMAND ----------",
   "python-envs.defaultEnvManager": "ms-python.python:venv",
-  "python-envs.pythonProjects": [{"root": "${workspaceFolder}"}],
   "python.defaultInterpreterPath": "/Users/max.kohler/ai-coding-tools/.venv/bin/python",
   "jupyter.kernels.filter": [],
   "jupyter.notebookFileRoot": "${workspaceFolder}"
