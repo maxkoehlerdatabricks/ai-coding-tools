@@ -18,5 +18,5 @@ if os.environ.get("DATABRICKS_CLUSTER_ID"):
     builder = builder.clusterId(os.environ["DATABRICKS_CLUSTER_ID"])
 spark = builder.getOrCreate()
 
-df = spark.read.table("samples.nyctaxi.trips")
 df.show(5)
+df = spark.read.table("samples.nyctaxi.trips")

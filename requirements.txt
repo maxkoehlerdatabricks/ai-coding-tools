@@ -1,3 +1,4 @@
 # Pin 17.3.x for serverless compute (v4). 18.x can report "Serverless mode is not yet supported".
 # See https://docs.databricks.com/en/dev-tools/databricks-connect/requirements
 databricks-connect==17.3.5
+ipykernel>=6.0
